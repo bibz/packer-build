@@ -249,7 +249,7 @@ provisioners:
   - qemu
 - <<: *provisioner_shell_options
   inline:
-  - dd if=/dev/zero of=/ZEROFILL bs=16M || true
+  - dd if=/dev/zero of=/ZEROFILL bs=16M 2>/dev/null || true
   - rm /ZEROFILL
   - sync
   only:
